@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Dancing_Script, Saira } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const saira = Saira({
   subsets: ["latin"],
-});
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-saira",
+  display: "swap"
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dancing = Dancing_Script({
   subsets: ["latin"],
-});
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dancing",
+  display: "swap",
+})
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${saira.variable} ${dancing.variable} font-sans`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

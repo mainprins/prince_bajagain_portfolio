@@ -4,12 +4,26 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+.glass {
+  background: rgba(20, 20, 20, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.font-sans {
+  font-family: var(--font-saira), system-ui, sans-serif;
+}
+
+.font-dancing {
+  font-family: var(--font-dancing), cursive;
+}
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+ 
 }
 
 @media (prefers-color-scheme: dark) {
