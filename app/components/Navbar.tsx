@@ -29,11 +29,11 @@ const Navbar = () => {
   useGSAP(()=>{
     gsap.to("#navIcons",{
         x: -window.innerWidth/4,
+        backgroundColor: "rgba(0, 0, 0, 0.70)",
         scrollTrigger: {
             scrub: true,
             start: "+=10",
             end:"+=100",
-            onLeaveBack : ()=> { document.querySelector("#navIcons")?.classList.remove("glass")}
         },
     });
 
