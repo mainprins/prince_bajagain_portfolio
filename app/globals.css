@@ -17,6 +17,10 @@ html {
   font-family: var(--font-dancing), cursive;
 }
 
+.font-dynapuff {
+  font-family: var(--font-dynapuff);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

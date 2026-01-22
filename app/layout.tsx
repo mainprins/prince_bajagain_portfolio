@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Saira } from "next/font/google";
+import { Dancing_Script, Saira,DynaPuff } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -17,6 +17,13 @@ const dancing = Dancing_Script({
   display: "swap",
 })
 
+const dynapuff = DynaPuff({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dynapuff",
+  display: "swap",
+});
+
 
 
 export const metadata: Metadata = {
@@ -32,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${saira.variable} ${dancing.variable} font-sans`}
+        className={`${saira.variable} ${dancing.variable} ${dynapuff.variable} font-sans`}
       >
         <Navbar />
         {children}
