@@ -71,7 +71,7 @@ const DetailsSection = () => {
           </div>
         </div>
       </div>
-      <div id="right" className='flex flex-col justify-start border border-stone-800 h-120 p-4 rounded-xl w-1/2'>
+      <div id="right" className='flex flex-col justify-start border over border-stone-800 h-120 p-4 rounded-xl w-1/2'>
         <div id="top" className='flex justify-end gap-2 w-full'>
           <div className='flex flex-col gap-1 self-end'>
             <span className='w-full flex '>

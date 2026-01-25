@@ -3,6 +3,8 @@ import AboutSection from "./components/AboutSection"
 import DetailsSection from "./components/DetailsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import SkillSection from "./components/SkillSection";
+import ScrollingBar from "./components/ScrollingBar";
+import QuickGlance from "./components/QuickGlance";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <DetailsSection />
       <ProjectsSection />
       <SkillSection />
+      <ScrollingBar />
+      <QuickGlance />
     </main>
   )
 }

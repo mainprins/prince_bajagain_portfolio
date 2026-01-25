@@ -22,11 +22,13 @@ const ProjectsSection = () => {
     
     // Maximum travel distance for the indicator (bar height minus indicator height)
     const maxTravel = progressBarHeight - indicatorHeight;
+    
+     const scrollableDistance = scrollHeight - scrollDiv.current.clientHeight;
 
     ScrollTrigger.create({
       trigger: bottomRef.current,
       start: "top top",
-      end: () => `+=${scrollHeight}`,
+      end: () => `+=${scrollableDistance}`,
       scrub: true,
       pin: true,
       onUpdate: (self) => {
@@ -34,7 +36,7 @@ const ProjectsSection = () => {
         const progress = self.progress;
         
         // Update scroll position
-        scrollDiv.current.scrollTop = progress * scrollHeight;
+        scrollDiv.current.scrollTop = progress * scrollableDistance;
         
         // Update progress indicator position
         const indicatorPosition = progress * maxTravel;
