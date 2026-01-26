@@ -14,41 +14,85 @@ const DetailsSection = () => {
   const photothirdRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(()=>{
+  
+  useGSAP(() => {
+  const mm = gsap.matchMedia();
 
-    gsap.to(photofirstRef.current,{
-       rotateZ: -10,
-       scrollTrigger:{
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-       }
-    })
+  // ✅ DESKTOP (md and above)
+  mm.add("(min-width: 768px)", () => {
 
-    gsap.to(containerRef.current,{
-       y: -90,
-       scrollTrigger:{
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-       }
-    })
+    gsap.to(photofirstRef.current, {
+      rotateZ: -10,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
 
-    gsap.to(photothirdRef.current,{
-       rotateZ: 10,
-       scrollTrigger:{
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-       }
-    })
-  })
+    gsap.to(containerRef.current, {
+      y: -90,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    gsap.to(photothirdRef.current, {
+      rotateZ: 5,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+  });
+
+  // ✅ MOBILE (below md)
+  mm.add("(max-width: 767px)", () => {
+
+    gsap.to(photofirstRef.current, {
+      rotateZ: 0,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 90%",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(containerRef.current, {
+      y: -30, 
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 90%",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    gsap.to(photothirdRef.current, {
+      rotateZ: 0,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 90%",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+  });
+
+  return () => mm.revert(); // cleanup
+});
   return (
-    <section className='flex gap-3 items-center mt-10 w-screen p-10'>
-      <div id="left" className='flex justify-between border border-stone-800 h-120 p-4 rounded-xl w-1/2'>
+    <section className='flex flex-col md:flex-row gap-3 items-center mt-10 w-screen p-10'>
+      <div id="left" className='flex w-full justify-between border border-stone-800 h-120 p-4 rounded-xl md:w-1/2'>
         <div id="left" className='flex flex-col'>
           <div id="top" className='flex flex-col'>
             <span className='text-stone-500 uppercase text-saira font-semibold tracking-widest text-sm'>Available Globally</span>
@@ -71,7 +115,7 @@ const DetailsSection = () => {
           </div>
         </div>
       </div>
-      <div id="right" className='flex flex-col justify-start border over border-stone-800 h-120 p-4 rounded-xl w-1/2'>
+      <div id="right" className='flex flex-col justify-start border over border-stone-800 h-120 p-4 rounded-xl w-full md:w-1/2'>
         <div id="top" className='flex justify-end gap-2 w-full'>
           <div className='flex flex-col gap-1 self-end'>
             <span className='w-full flex '>
@@ -93,8 +137,8 @@ const DetailsSection = () => {
       className="
         absolute bottom-6 left-1/2
         w-30 h-60 bg-amber-600
-        -translate-x-[120%]
-        -rotate-20 origin-bottom-right
+        md:-translate-x-[120%] -translate-x-[110%]
+        md:-rotate-20 -rotate-5 origin-bottom-right
         z-10 rounded-xl
       "
       id='photo1'
@@ -118,8 +162,8 @@ const DetailsSection = () => {
       className="
         absolute bottom-6 left-1/2
         w-30 h-60 bg-amber-200 rounded-xl
-        translate-x-[20%]
-        rotate-20 origin-bottom-left
+        md:translate-x-[20%] translate-x-[10%]
+        md:rotate-20 rotate-5 origin-bottom-left
         z-10
       "
       id='photo3'

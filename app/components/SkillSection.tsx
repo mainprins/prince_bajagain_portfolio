@@ -2,10 +2,10 @@ import React from 'react'
 
 const SkillSection = () => {
     return (
-        <section className='w-screen mt-[250vh] flex flex-col gap-6'>
+        <section className='w-screen mt-[10vh] md:mt-[250vh] flex flex-col gap-6'>
             <div id="top" className='w-full flex flex-col items-center justify-center'>
                 <span className='uppercase text-stone-500 text-sm tracking-widest'>My Skillset</span>
-                <span className='text-6xl font-bold flex gap-3 tracking-wider'>
+                <span className='text-3xl font-bold flex gap-3 tracking-wider'>
                     <span>The Magic</span>
                     <span className='font-medium font-dynapuff bg-linear-to-r from-pink-600 via-red-500 to-amber-600 text-transparent bg-clip-text'>Behind</span>
                 </span>
