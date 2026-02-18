@@ -4,14 +4,13 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
-import { BsGithub, BsTwitterX } from 'react-icons/bs'
 import { CiLocationArrow1, CiLocationOn } from 'react-icons/ci'
-import { FaLocationArrow } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaLocationArrow } from 'react-icons/fa'
 import { HiOutlineViewfinderCircle } from 'react-icons/hi2'
-import { LiaLinkedin } from 'react-icons/lia'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { SiGooglegemini } from 'react-icons/si'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Link from 'next/link'
 
 type Philosophy = {
   heading: string;
@@ -32,12 +31,12 @@ const AboutSection = () => {
     { heading: "Attention to detail", text: "Polish lives in the edges: spacing, timing, and states." },
   ]
   const images: string[] = [
-    "https://img.freepik.com/free-photo/designer-working-3d-model_23-2149371896.jpg",
-    "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg",
-    "https://img.freepik.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_hybrid&w=740&q=80",
-    "https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049",
-    "https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg",
-    "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg",
+    "/me/01.jpg",
+    "/me/02.jpg",
+    "/me/03.jpg",
+    "/me/04.jpg",
+    "/me/05.jpeg",
+    "/me/06.jpg",
   ];
 
 
@@ -99,7 +98,7 @@ const AboutSection = () => {
   }, []);
   return (
     <section className='flex flex-col md:flex-row gap-3 items-center justify-center mt-10 p-10'>
-      <div id="left" className='border border-stone-800 w-full md:w-100 h-120 flex flex-col gap-10 p-4 rounded-xl'>
+      <div id="left" className='border border-stone-800 w-full md:w-100 h-120 flex flex-col items-center gap-10 p-4 rounded-xl'>
         <div id="top" className='flex flex-col gap-1'>
           <span className='flex gap-4 items-center justify-center'><span className='text-2xl font-bold font-saira'>Prince</span> <span className='font-dancing text-stone-500 text-2xl font-bold'>Bajgain</span></span>
           <div className='text-stone-500 flex gap-2 items-center justify-center'>
@@ -118,12 +117,18 @@ const AboutSection = () => {
         </div>
 
         <div id="bottom" className='flex w-full items-center justify-center gap-3'>
-          <LiaLinkedin />
-          <BsGithub />
-          <BsTwitterX />
+          <Link href={'https://github.com/mainprins'} target='_blank'>
+            <FaGithub />
+          </Link>
+          <Link href={'https://www.linkedin.com/in/prince-bajgain-39376b363/'} target='_blank'>
+            <FaLinkedin />
+          </Link>
+          <Link href={'https://www.instagram.com/prince.bajagain/'} target='_blank'>
+            <FaInstagram />
+          </Link>
         </div>
       </div>
-      <div id="middle" className='flex overflow-hidden w-full flex-col gap-8 h-120 border border-stone-800 p-4 rounded-xl' onMouseEnter={() => setIsHovered(true)}
+      <div id="middle" className='flex overflow-hidden w-full flex-col items-center gap-8 h-120 border border-stone-800 p-4 rounded-xl' onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
         <div id="top" className='flex gap-20 flex-col md:flex-row w-max justify-between items-center'>
           <div id="left" className='flex flex-col gap-6'>

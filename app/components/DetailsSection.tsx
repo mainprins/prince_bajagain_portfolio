@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,7 +104,7 @@ const DetailsSection = () => {
         <div id="right" className='h-full flex flex-col justify-between'>
           <div id="top" className='flex flex-col gap-3'>
             <div id="one" className='rounded-full py-1 border-stone-500 border bg-stone-800 text-stone-500 px-3 text-sm'>GB UK</div>
-            <div id="two" className='rounded-full py-1 border-amber-500 border bg-amber-800 text-amber-500 px-3 text-sm'>IN India</div>
+            <div id="two" className='rounded-full py-1 border-amber-500 border bg-amber-800 text-amber-500 px-3 text-sm'>NP Nepal</div>
             <div id="three" className='rounded-full py-1 border-stone-500 border bg-stone-800 text-stone-500 px-3 text-sm'>US USA</div>
           </div>
           <div id="bottom" className='flex flex-col self-end'>
@@ -119,10 +120,10 @@ const DetailsSection = () => {
         <div id="top" className='flex justify-end gap-2 w-full'>
           <div className='flex flex-col gap-1 self-end'>
             <span className='w-full flex '>
-              <span className='text-3xl font-bold font-saira'>Founder of</span>
+              <span className='text-3xl font-bold font-saira'>Magnifying</span>
               <span className='bg-linear-to-r from-white to-stone-950 pb-0.5'>
                 <div className='bg-stone-950 pb-1'>
-                  <span className='text-3xl font-bold overflow-auto px-2 font-dynapuff italic bg-linear-to-r from-pink-600 via-red-500 to-amber-600 text-transparent bg-clip-text'>Rune</span>
+                  <span className='text-3xl font-bold overflow-auto px-2 font-dynapuff italic bg-linear-to-r from-pink-600 via-red-500 to-amber-600 text-transparent bg-clip-text'>Details</span>
                 </div>
               </span>
             </span>
@@ -136,39 +137,52 @@ const DetailsSection = () => {
     <figure
       className="
         absolute bottom-6 left-1/2
-        w-30 h-60 bg-amber-600
+        w-30 h-60 
         md:-translate-x-[120%] -translate-x-[110%]
         md:-rotate-20 -rotate-5 origin-bottom-right
         z-10 rounded-xl
       "
       id='photo1'
       ref={photofirstRef}
-    />
+    >
+       <figure className='w-full h-full relative'>
+         <Image alt='PersonImage' src={'/me/01.jpg'} objectFit='cover' fill className='rounded-xl'/>
+      </figure>
+    </figure>
 
     {/* Center plank */}
     <figure
       className="
         absolute bottom-6 left-1/2 rounded-xl
-        w-30 h-70 bg-amber-900
-        -translate-x-1/2
+        w-30 h-70
+        -translate-x-1/2 
         z-20
       "
       id='photo2'
       ref={photosecondRef}
-    />
+    >
+        <figure className='w-full h-full relative'>
+         <Image alt='PersonImage' src={'/me/02.jpg'} objectFit='cover' fill className='rounded-xl'/>
+      </figure>
+    </figure>
 
     {/* Right plank */}
     <figure
       className="
         absolute bottom-6 left-1/2
-        w-30 h-60 bg-amber-200 rounded-xl
+        w-30 h-60 rounded-xl
         md:translate-x-[20%] translate-x-[10%]
         md:rotate-20 rotate-5 origin-bottom-left
         z-10
       "
       id='photo3'
       ref={photothirdRef}
-    />
+    >
+      <figure className='w-full h-full relative'>
+         <Image alt='PersonImage' src={'/me/04.jpg'} objectFit='cover' fill className='rounded-xl'/>
+      </figure>
+       
+    </figure>
     </div>
     
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Dancing_Script, Saira,DynaPuff } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import LenisScrollProvider from "./providers/lenisprovider";
 
 const saira = Saira({
   subsets: ["latin"],
@@ -42,7 +43,9 @@ export default function RootLayout({
         className={`${saira.variable} ${dancing.variable} ${dynapuff.variable} font-sans`}
       >
         <Navbar />
-        {children}
+        <LenisScrollProvider>
+          {children}
+        </LenisScrollProvider>
       </body>
     </html>
   );

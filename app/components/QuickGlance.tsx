@@ -98,28 +98,28 @@ const QuickGlance = () => {
                     ref={sliderRef}
                 >
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/01.jpg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/handsome-young-man-with-arms-crossed-white-background_23-2148222620.jpg" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/02.jpg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/designer-working-3d-model_23-2149371896.jpg?semt=ais_hybrid&w=740&q=80" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/03.jpg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/handsome-young-cheerful-man-with-arms-crossed_171337-1073.jpg?semt=ais_hybrid&w=740&q=80" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/04.jpg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/premium-photo/confident-guy-crossing-arms-smiling-blue-background_116547-108214.jpg" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/05.jpeg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/curly-man-with-broad-smile-shows-perfect-teeth-being-amused-by-interesting-talk-has-bushy-curly-dark-hair-stands-indoor-against-white-blank-wall_273609-17092.jpg?semt=ais_user_personalization&w=740&q=80" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/06.jpg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/vertical-shot-happy-dark-skinned-female-with-curly-hair_273609-15519.jpg?semt=ais_hybrid&w=740&q=80" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/01.jpg" alt="" />
                     </span>
                     <span className='absolute w-40 h-40 md:h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg" alt="" />
+                        <img className='w-full h-full object-cover rounded-lg shadow-2xl' src="/me/02.jpg" alt="" />
                     </span>
                 </div>
             </div>
