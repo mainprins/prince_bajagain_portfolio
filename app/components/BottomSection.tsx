@@ -7,7 +7,7 @@ const BottomSection = () => {
         <div id="left" className='flex flex-col font-saira md:w-[60%]'>
             <div className="top flex flex-col md:flex-row gap-3 items-center text-6xl md:text-8xl tracking-tightest ">
                 <div className="left bg-amber-100 w-20 h-20 hidden md:flex rounded-full">
-                    <Image src="/me/06.jpg" alt="" width={80}  height={80} className='w-full rounded-full h-full object-cover'/>
+                    <Image unoptimized src="/me/06.jpg" alt="" width={80}  height={80} className='w-full rounded-full h-full object-cover'/>
                 </div>
                 <span>Let's create</span>
             </div>

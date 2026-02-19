@@ -110,7 +110,7 @@ const AboutSection = () => {
           <div id="slider" className="flex gap-4 shrink-0" ref={sliderRef}>
             {images.map((src, i) => (
               <div key={i} className="relative image-item w-30 h-40 shrink-0" >
-                <Image src={src} alt={`Profile ${i + 1}`} fill className="object-cover rounded-xl" />
+                <Image unoptimized src={src} alt={`Profile ${i + 1}`} fill className="object-cover rounded-xl" />
               </div>
             ))}
           </div>

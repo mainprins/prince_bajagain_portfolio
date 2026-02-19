@@ -236,45 +236,45 @@ const ProjectsSection = () => {
             <div id="list-1" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://github.com/mainprins/chattily-fullStack', '_blank')}>
               <div id="left" className='w-1/2 h-full flex flex-col gap-3'>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[0]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[0]} />
                 </figure>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[1]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[1]} />
                 </figure>
               </div>
               <div id="right" className='w-1/2 h-full'>
                 <figure className='bg-black w-full h-full rounded-lg relative overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[2]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[2]} />
                 </figure>
               </div>
             </div>
             <div id="list-2" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://mero-resume-n2xg.onrender.com/', '_blank')}>
               <div id="left" className='w-1/2 h-full flex flex-col gap-3'>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[0]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[0]} />
                 </figure>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[1]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[1]} />
                 </figure>
               </div>
               <div id="right" className='w-1/2 h-full'>
                 <figure className='bg-black w-full h-full rounded-lg relative overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[2]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[2]} />
                 </figure>
               </div>
             </div>
             <div id="list-3" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://imflifesciences.com.np/', '_blank')}>
               <div id="left" className='w-1/2 h-full flex flex-col gap-3'>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[0]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[0]} />
                 </figure>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[1]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[1]} />
                 </figure>
               </div>
               <div id="right" className='w-1/2 h-full'>
                 <figure className='bg-black w-full h-full rounded-lg relative overflow-hidden'>
-                  <Image alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[2]} />
+                  <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[2]} />
                 </figure>
               </div>
             </div>
@@ -324,15 +324,15 @@ const ProjectsSection = () => {
       <div className='w-full flex gap-2 aspect-square'>
         <div className='w-1/2 flex flex-col gap-2'>
           <figure className='relative h-1/2 w-full rounded-xl overflow-hidden border border-stone-800'>
-            <Image alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[0]} />
+            <Image unoptimized alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[0]} />
           </figure>
           <figure className='relative h-1/2 w-full rounded-xl overflow-hidden border border-stone-800'>
-            <Image alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[1]} />
+            <Image unoptimized alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[1]} />
           </figure>
         </div>
         <div className='w-1/2'>
           <figure className='relative w-full h-full rounded-xl overflow-hidden border border-stone-800'>
-            <Image alt='Project main' fill className='object-cover blur-xs grayscale' src={project.images[2]} />
+            <Image unoptimized alt='Project main' fill className='object-cover blur-xs grayscale' src={project.images[2]} />
           </figure>
         </div>
       </div>
