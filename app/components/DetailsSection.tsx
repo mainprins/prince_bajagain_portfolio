@@ -146,7 +146,7 @@ const DetailsSection = () => {
       ref={photofirstRef}
     >
        <figure className='w-full h-full relative'>
-         <Image unoptimized unoptimized alt='PersonImage' src={'/me/01.jpg'} objectFit='cover' fill className='rounded-xl'/>
+         <Image unoptimized alt='PersonImage' src={'/me/01.jpg'} objectFit='cover' fill className='rounded-xl'/>
       </figure>
     </figure>
 
