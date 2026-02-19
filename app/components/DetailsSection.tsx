@@ -146,7 +146,7 @@ const DetailsSection = () => {
       ref={photofirstRef}
     >
        <figure className='w-full h-full relative'>
-         <Image alt='PersonImage' src={'/me/01.jpg'} objectFit='cover' fill className='rounded-xl'/>
+         <Image unoptimized unoptimized alt='PersonImage' src={'/me/01.jpg'} objectFit='cover' fill className='rounded-xl'/>
       </figure>
     </figure>
 
@@ -162,7 +162,7 @@ const DetailsSection = () => {
       ref={photosecondRef}
     >
         <figure className='w-full h-full relative'>
-         <Image alt='PersonImage' src={'/me/02.jpg'} objectFit='cover' fill className='rounded-xl'/>
+         <Image unoptimized alt='PersonImage' src={'/me/02.jpg'} objectFit='cover' fill className='rounded-xl'/>
       </figure>
     </figure>
 
@@ -179,7 +179,7 @@ const DetailsSection = () => {
       ref={photothirdRef}
     >
       <figure className='w-full h-full relative'>
-         <Image alt='PersonImage' src={'/me/04.jpg'} objectFit='cover' fill className='rounded-xl'/>
+         <Image unoptimized alt='PersonImage' src={'/me/04.jpg'} objectFit='cover' fill className='rounded-xl'/>
       </figure>
        
     </figure>
