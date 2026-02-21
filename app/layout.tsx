@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Saira,DynaPuff } from "next/font/google";
+import { Dancing_Script, Saira, DynaPuff } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import LenisScrollProvider from "./providers/lenisprovider";
@@ -28,6 +28,9 @@ const dynapuff = DynaPuff({
 
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
   metadataBase: new URL("https://princebajgain.com.np"),
 
   title: {
