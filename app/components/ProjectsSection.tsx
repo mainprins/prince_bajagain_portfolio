@@ -5,8 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiSocketdotio, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
-import { TbBrandReactNative } from 'react-icons/tb';
-import { BiLogoPostgresql } from 'react-icons/bi';
 import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 
@@ -23,7 +21,9 @@ type Projects = {
   tech: Array<{ name: string, icon: any }>,
 }
 
+
 const ProjectsSection = () => {
+  const [cursorVisible, setCursorVisible] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
@@ -104,6 +104,10 @@ const ProjectsSection = () => {
         duration: 0.15,
         ease: "power3.out"
       });
+
+      if (!cursorVisible) {
+      setCursorVisible(true);
+    }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -111,7 +115,7 @@ const ProjectsSection = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [isHovering]);
+  }, [isHovering, cursorVisible]);
 
 
 
@@ -157,24 +161,6 @@ const ProjectsSection = () => {
       };
     }
   }, []);
-
-  const projectImages = [
-    [
-      { className: 'bg-gradient-to-br from-red-400 to-pink-500' },
-      { className: 'bg-gradient-to-br from-purple-400 to-indigo-500' },
-      { className: 'bg-gradient-to-br from-blue-400 to-cyan-500' }
-    ],
-    [
-      { className: 'bg-gradient-to-br from-green-400 to-emerald-500' },
-      { className: 'bg-gradient-to-br from-yellow-400 to-orange-500' },
-      { className: 'bg-gradient-to-br from-rose-400 to-red-500' }
-    ],
-    [
-      { className: 'bg-gradient-to-br from-violet-400 to-purple-500' },
-      { className: 'bg-gradient-to-br from-fuchsia-400 to-pink-500' },
-      { className: 'bg-gradient-to-br from-amber-400 to-orange-500' }
-    ]
-  ];
 
   return (
     <section className='w-full p-4 lg:p-10 flex flex-col gap-10 lg:gap-20'>
@@ -233,7 +219,7 @@ const ProjectsSection = () => {
         </div>
         <div id="right" className='w-full ml-20 overflow-hidden h-screen' ref={scrollDiv}>
           <div id="projects-list" className='w-full flex flex-col mt-20 gap-20'>
-            <div id="list-1" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://github.com/mainprins/chattily-fullStack', '_blank')}>
+            <div id="list-1" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false); setCursorVisible(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://github.com/mainprins/chattily-fullStack', '_blank')}>
               <div id="left" className='w-1/2 h-full flex flex-col gap-3'>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
                   <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[0].images[0]} />
@@ -248,7 +234,7 @@ const ProjectsSection = () => {
                 </figure>
               </div>
             </div>
-            <div id="list-2" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://mero-resume-n2xg.onrender.com/', '_blank')}>
+            <div id="list-2" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false); setCursorVisible(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://mero-resume-n2xg.onrender.com/', '_blank')}>
               <div id="left" className='w-1/2 h-full flex flex-col gap-3'>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
                   <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[1].images[0]} />
@@ -263,7 +249,7 @@ const ProjectsSection = () => {
                 </figure>
               </div>
             </div>
-            <div id="list-3" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://imflifesciences.com.np/', '_blank')}>
+            <div id="list-3" onMouseEnter={() => { setIsHovering(true) }} onMouseLeave={() => { setIsHovering(false); setCursorVisible(false) }} className='w-full h-screen flex gap-3 shrink-0 cursor-pointer' onClick={() => window.open('https://imflifesciences.com.np/', '_blank')}>
               <div id="left" className='w-1/2 h-full flex flex-col gap-3'>
                 <figure className='bg-black relative h-1/2 w-full rounded-lg overflow-hidden'>
                   <Image unoptimized alt='ImageProject' fill objectFit='cover' className='grayscale blur-sm' src={projects[2].images[0]} />
@@ -283,76 +269,77 @@ const ProjectsSection = () => {
       </div>
 
       {/* Mobile View */}
-<div className='flex lg:hidden flex-col gap-12'>
-  {projects.map((project, index) => (
-    <div key={index} className='flex flex-col gap-6 border border-stone-800 p-5 rounded-2xl bg-stone-900/30'>
-      
-      {/* Text Content */}
-      <div className='flex flex-col gap-4'>
-        <div className='flex flex-col gap-2'>
-          <span className='text-2xl font-semibold text-stone-100'>{project.heading}</span>
-          <p className='text-stone-400 text-sm leading-relaxed'>{project.desc}</p>
-        </div>
+      <div className='flex lg:hidden flex-col gap-12'>
+        {projects.map((project, index) => (
+          <div key={index} className='flex flex-col gap-6 border border-stone-800 p-5 rounded-2xl bg-stone-900/30'>
 
-        <div className='flex flex-col gap-2'>
-          {[project.pointone, project.pointtwo, project.pointthree].map((point, i) => (
-            <span key={i} className='text-stone-400 text-sm flex gap-2 items-start'>
-              <RiGeminiFill className='text-amber-600 mt-1 shrink-0' />
-              {point}
-            </span>
-          ))}
-        </div>
+            {/* Text Content */}
+            <div className='flex flex-col gap-4'>
+              <div className='flex flex-col gap-2'>
+                <span className='text-2xl font-semibold text-stone-100'>{project.heading}</span>
+                <p className='text-stone-400 text-sm leading-relaxed'>{project.desc}</p>
+              </div>
 
-        {/* Tech Stack */}
-        <div className='flex gap-2 flex-wrap w-full'>
-          {project.tech.map((tech, i) => {
-            const Icon = tech.icon;
-            return (
-              <span
-                key={i}
-                className='bg-stone-800/50 border border-stone-700 text-stone-300 px-3 py-1 rounded-full text-xs flex items-center gap-1.5'
-              >
-                <Icon className='text-sm text-stone-400' />
-                {tech.name}
-              </span>
-            );
-          })}
-        </div>
+              <div className='flex flex-col gap-2'>
+                {[project.pointone, project.pointtwo, project.pointthree].map((point, i) => (
+                  <span key={i} className='text-stone-400 text-sm flex gap-2 items-start'>
+                    <RiGeminiFill className='text-amber-600 mt-1 shrink-0' />
+                    {point}
+                  </span>
+                ))}
+              </div>
+
+              {/* Tech Stack */}
+              <div className='flex gap-2 flex-wrap w-full'>
+                {project.tech.map((tech, i) => {
+                  const Icon = tech.icon;
+                  return (
+                    <span
+                      key={i}
+                      className='bg-stone-800/50 border border-stone-700 text-stone-300 px-3 py-1 rounded-full text-xs flex items-center gap-1.5'
+                    >
+                      <Icon className='text-sm text-stone-400' />
+                      {tech.name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Project Images - Replicating Desktop Layout */}
+            <div className='w-full flex gap-2 aspect-square'>
+              <div className='w-1/2 flex flex-col gap-2'>
+                <figure className='relative h-1/2 w-full rounded-xl overflow-hidden border border-stone-800'>
+                  <Image unoptimized alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[0]} />
+                </figure>
+                <figure className='relative h-1/2 w-full rounded-xl overflow-hidden border border-stone-800'>
+                  <Image unoptimized alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[1]} />
+                </figure>
+              </div>
+              <div className='w-1/2'>
+                <figure className='relative w-full h-full rounded-xl overflow-hidden border border-stone-800'>
+                  <Image unoptimized alt='Project main' fill className='object-cover blur-xs grayscale' src={project.images[2]} />
+                </figure>
+              </div>
+            </div>
+
+            {/* Visit Project Button */}
+            <button
+              onClick={() => window.open(project.link, '_blank')}
+              className='w-full py-4 bg-white text-black font-bold rounded-xl active:scale-95 transition-transform flex items-center justify-center gap-2 uppercase tracking-wider text-sm'
+            >
+              Visit Project
+              <RiGeminiFill className='text-black' />
+            </button>
+
+          </div>
+        ))}
       </div>
-
-      {/* Project Images - Replicating Desktop Layout */}
-      <div className='w-full flex gap-2 aspect-square'>
-        <div className='w-1/2 flex flex-col gap-2'>
-          <figure className='relative h-1/2 w-full rounded-xl overflow-hidden border border-stone-800'>
-            <Image unoptimized alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[0]} />
-          </figure>
-          <figure className='relative h-1/2 w-full rounded-xl overflow-hidden border border-stone-800'>
-            <Image unoptimized alt='Project detail' fill className='object-cover blur-xs grayscale' src={project.images[1]} />
-          </figure>
-        </div>
-        <div className='w-1/2'>
-          <figure className='relative w-full h-full rounded-xl overflow-hidden border border-stone-800'>
-            <Image unoptimized alt='Project main' fill className='object-cover blur-xs grayscale' src={project.images[2]} />
-          </figure>
-        </div>
-      </div>
-
-      {/* Visit Project Button */}
-      <button 
-        onClick={() => window.open(project.link, '_blank')}
-        className='w-full py-4 bg-white text-black font-bold rounded-xl active:scale-95 transition-transform flex items-center justify-center gap-2 uppercase tracking-wider text-sm'
-      >
-        Visit Project
-        <RiGeminiFill className='text-black' />
-      </button>
-
-    </div>
-  ))}
-</div>
       {isHovering && (
         <div
           ref={cursorRef}
-          className="fixed top-0 left-0 z-[9999] pointer-events-none flex items-center justify-center transition-transform duration-100 ease-out"
+          className={`fixed top-0 left-0 z-[9999] pointer-events-none ${isHovering && cursorVisible ? "opacity-100" : "opacity-0"
+            } flex items-center justify-center transition-transform duration-100 ease-out`}
           style={{ transform: "translate(-50%, -50%)" }}
         >
           {/* Dark Glass Disk */}
