@@ -82,7 +82,7 @@ const SkillSection = () => {
 
       {/* BOTTOM */}
       <div className="w-full flex items-center justify-center mt-8">
-        <div className="flex gap-3 flex-wrap w-[95%] md:w-[60%] items-center justify-center">
+        <div className="flex gap-3 min-h-30 flex-wrap w-[95%] md:w-[60%] items-center justify-center">
           {skills.map(({ name, icon: Icon }) => (
             <span
               key={name}
