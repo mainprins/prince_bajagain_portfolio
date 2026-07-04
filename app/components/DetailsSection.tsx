@@ -19,7 +19,6 @@ const DetailsSection = () => {
   useGSAP(() => {
   const mm = gsap.matchMedia();
 
-  // ✅ DESKTOP (md and above)
   mm.add("(min-width: 768px)", () => {
 
     gsap.to(photofirstRef.current, {
