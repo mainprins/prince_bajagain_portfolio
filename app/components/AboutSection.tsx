@@ -117,7 +117,7 @@ const AboutSection = () => {
         </div>
 
         <div id="bottom" className='flex w-full items-center justify-center gap-3'>
-          <Link href={'https://github.com/mainprins'} target='_blank'>
+          <Link href={'https://github.com/prince-bajgain'} target='_blank'>
             <FaGithub />
           </Link>
           <Link href={'https://www.linkedin.com/in/prince-bajgain-39376b363/'} target='_blank'>
