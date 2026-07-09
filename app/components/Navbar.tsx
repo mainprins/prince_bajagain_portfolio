@@ -31,7 +31,7 @@ const navOptions: OptionItem[] = [
 
 // Social media links
 const socialOptions: OptionItem[] = [
-    { title: "Github", description: "View my github profile", icon: <FaGithub />, href: "https://github.com/mainprins" },
+    { title: "Github", description: "View my github profile", icon: <FaGithub />, href: "https://github.com/prince-bajgain" },
     { title: "LinkedIn", description: "View my linkedin profile", icon: <FaLinkedin />, href: "https://www.linkedin.com/in/prince-bajgain-39376b363/" },
     { title: "Instagram", description: "View my instagram profile", icon: <FaInstagram />, href: "https://www.instagram.com/prince.bajagain/" },
 ];
